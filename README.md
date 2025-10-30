@@ -1,49 +1,78 @@
 
 # 🌌 Jedi System Watcher
 
-> "Feel the Force of your CPU."
+> *"Your system resources… they surround you. They bind the galaxy — and your CPU cores — together."*
 
-A sci-fi desktop overlay built with Python + PyQt6.
-The widget floats above other windows and reacts to system load in real time.
+A real-time sci-fi desktop HUD built with **Python + PyQt6**.
+It floats over your screen, reacts to system load, plays Star-Wars-style sounds, and glows with the Force.
 
-## Modes
+## 🎭 Modes of the Force
 
-| Mode | Trigger | Visual | Sound |
-|------|---------|--------|-------|
-| 🟢 Jedi Idle | CPU < 70% | `jedi_idle.gif` (calm green aura) | `calm.wav` (deep hum) |
-| 🟠 Warrior Alert | 70% ≤ CPU < 90% | `warrior_alert.gif` (orange pulse) | `alert.wav` (sci-fi ping) |
-| 🔴 Dark Lord Critical | CPU ≥ 90% | `darklord_critical.gif` (red violent energy) | `dark.wav` (low ominous pulse) |
+| Mode                      | CPU State | Visual                           | Sound               |
+| ------------------------- | --------- | -------------------------------- | ------------------- |
+| 🟢 **Jedi Focus**         | CPU < 70% | Calm green aura, meditative core | Peaceful energy hum |
+| 🟠 **Battle Tension**     | 70–90%    | Orange pulse, warrior energy     | Alert ping          |
+| 🔴 **Dark Side Overload** | > 90%     | Violent red aura, chaos          | Ominous power surge |
 
-## How to run
+The widget **breathes with your system load**, neon-glows, and shifts theme between **Light Side ↔ Dark Side** with one click.
 
-1. Create venv (done already).
-2. Install deps:
+## 🛠 Requirements
 
-```powershell
-pip install PyQt6 psutil pygame requests pillow numpy
-````
-
-3. Generate assets (GIFs / sounds / icon):
-
-```powershell
-python generate_assets.py
+```bash
+Python 3.10+
+Windows 10/11 (transparent window optimized)
 ```
 
-4. Launch the watcher:
+## 📦 Install
 
-```powershell
+```bash
+pip install PyQt6 psutil pygame GPUtil
+```
+
+> `requests`, `Pillow`, `numpy` only needed if you regenerate assets.
+
+## 🚀 Run
+
+```bash
 python main.py
 ```
 
-## Tech stack
+## 🎧 Assets
 
-* PyQt6 for UI
-* psutil for system stats
-* pygame.mixer for audio playback
-* Pillow for procedural animated GIF generation
-* pure Python audio synthesis (wave module)
+All hologram GIFs + sound effects are **procedurally generated** (CC0).
+You can replace them with actual Star Wars assets — your project, your destiny. ✨
 
-## License for assets
+Directories:
 
-All generated assets are original procedural graphics/sound.
-You own them. CC0-style: do whatever you want.
+```
+assets/
+  jedi_idle.gif
+  warrior_alert.gif
+  darklord_critical.gif
+  calm.wav
+  alert.wav
+  dark.wav
+  icon.png
+```
+
+---
+
+## 🧠 Tech behind the Force
+
+| Feature                  | Library                                  |
+| ------------------------ | ---------------------------------------- |
+| UI                       | PyQt6                                    |
+| System stats             | psutil                                   |
+| GPU detection            | GPUtil / NVIDIA NVML                     |
+| Audio                    | pygame.mixer                             |
+| Glow, transparency, neon | Qt effects / frameless transparent layer |
+
+> No external images. No copyrighted content.
+> Everything is legally clean. Yes, you can share it. ✅
+
+---
+
+## 📜 License
+
+Source code: MIT
+Generated assets: **CC0** — yours to keep, modify, share.
